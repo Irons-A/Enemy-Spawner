@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(_destinationX, _destinationY, gameObject.transform.position.z) * Time.deltaTime * _movementSpeed;
+        transform.position += new Vector3(_destinationX, _destinationY, gameObject.transform.position.z).normalized * Time.deltaTime * _movementSpeed;
     }
 
     public void SetDirection(int x, int y)
