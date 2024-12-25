@@ -8,31 +8,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int _enemyDestinationX = 1;
     [SerializeField] private int _enemyDestinationY = 1;
 
-    private SpawnController _spawnController;
-
-    private void Awake()
+    public void SpawnEnemy ()
     {
-        _spawnController = FindObjectOfType<SpawnController>();
-        _spawnController.SpawnerSelected += SpawnEnemy;
-    }
-
-    private void OnEnable()
-    {
-        _spawnController.SpawnerSelected += SpawnEnemy;
-    }
-
-    private void OnDisable()
-    {
-        _spawnController.SpawnerSelected -= SpawnEnemy;
-    }
-
-    private void SpawnEnemy (Spawner spawner)
-    {
-        if (spawner == this)
-        {
-            Instantiate(_enemy, transform.position, Quaternion.identity)
-                .GetComponent<Enemy>().SetDirection(_enemyDestinationX, _enemyDestinationY);
-        }
+        Instantiate(_enemy, transform.position, Quaternion.identity).SetDirection(_enemyDestinationX, _enemyDestinationY);
     }
 
 }

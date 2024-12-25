@@ -12,8 +12,6 @@ public class SpawnController : MonoBehaviour
     private Coroutine _spawnRoutine;
     private bool _isActive = true;
 
-    public event Action<Spawner> SpawnerSelected;
-    
     private void Start()
     {
         _spawnRoutine = StartCoroutine(SpawnRoutine());
@@ -22,11 +20,12 @@ public class SpawnController : MonoBehaviour
     private IEnumerator SpawnRoutine()
     {
         WaitForSeconds spawnRate = new WaitForSeconds(_spawnRate);
-        Spawner selectedSpawner = _spawners[Random.Range(0, _spawners.Count)];
+        Spawner selectedSpawner;
 
         while (_isActive)
         {
-            SpawnerSelected?.Invoke(selectedSpawner);
+            selectedSpawner = _spawners[Random.Range(0, _spawners.Count)];
+            selectedSpawner.SpawnEnemy();
             yield return spawnRate;
         }
     }
