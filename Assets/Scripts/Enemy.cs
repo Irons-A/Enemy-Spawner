@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _movementSpeed = 1f;
+    [SerializeField] private float _movementSpeed = 2f;
 
-    private int _destinationX = 0;
-    private int _destinationY = 0;
+    private Patroller _target;
 
     private void Update()
     {
-        transform.position += new Vector3(_destinationX, _destinationY, gameObject.transform.position.z).normalized * Time.deltaTime * _movementSpeed;
+        if (_target != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, 
+                _target.transform.position, _movementSpeed * Time.deltaTime);
+        }
     }
 
-    public void SetDirection(int x, int y)
+    public void SetTarget(Patroller target)
     {
-        _destinationX = x;
-        _destinationY = y;
+        _target = target;
     }
 }

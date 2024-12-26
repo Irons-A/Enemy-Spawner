@@ -5,12 +5,11 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private int _enemyDestinationX = 1;
-    [SerializeField] private int _enemyDestinationY = 1;
+    [SerializeField] private Patroller _target;
 
     public void SpawnEnemy ()
     {
-        Instantiate(_enemy, transform.position, Quaternion.identity).SetDirection(_enemyDestinationX, _enemyDestinationY);
+        Instantiate(_enemy, transform.position, Quaternion.identity).SetTarget(_target);
     }
 
 }
