@@ -10,21 +10,20 @@ public class Patroller : MonoBehaviour
 
     [SerializeField] private int _currentWaypoint = 0;
 
+    private Vector3 _offset;
+    private float _sqrLength;
+
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position,
             _route[_currentWaypoint].transform.position, _movementSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, _route[_currentWaypoint].transform.position) <= _waypointReachAccuracy)
+        _offset = _route[_currentWaypoint].transform.position - transform.position;
+        _sqrLength = _offset.sqrMagnitude;
+
+        if (_sqrLength < _waypointReachAccuracy * _waypointReachAccuracy)
         {
-            if (_currentWaypoint < _route.Count-1)
-            {
-                _currentWaypoint++;
-            }
-            else
-            {
-                _currentWaypoint = 0;
-            }
+            _currentWaypoint = (_currentWaypoint + 1) % _route.Count;
         }
     }
 }

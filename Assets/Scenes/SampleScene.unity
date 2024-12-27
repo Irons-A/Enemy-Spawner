@@ -269,7 +269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1858877279667894390, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: m_Name
-      value: Spawner (1)
+      value: SpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 4795966404135299984, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,6 +311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305399624860231753, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 3622954536645251964, guid: c88319e8665ace3469a8900f357a400c, type: 3}
     - target: {fileID: 7305399624860231753, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: _target
       value: 
@@ -669,7 +673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1858877279667894390, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: m_Name
-      value: Spawner (2)
+      value: SpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 4795966404135299984, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -711,6 +715,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305399624860231753, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 6515646643619984441, guid: 7446d7d69189b914e8b81553d5b0f87f, type: 3}
     - target: {fileID: 7305399624860231753, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: _target
       value: 
@@ -949,7 +957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1858877279667894390, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: SpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 4795966404135299984, guid: d082a70a01371294fb4afdde9206c9d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1182,7 +1190,7 @@ GameObject:
   - component: {fileID: 2091993594}
   - component: {fileID: 2091993595}
   m_Layer: 0
-  m_Name: SpawnController
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
